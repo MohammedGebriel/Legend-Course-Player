@@ -6,10 +6,10 @@ import { useDataContext } from '@/hooks/DataContext';
 export default function VideoController({course,}) {    
     const [actionTriggered, setActionTriggered] = useState(false);
     const { updateLessonProperty  } = useDataContext()
-    const [storageCourse,setStorageCourse] = useState(() =>
-        typeof window !== "undefined" ? JSON.parse(localStorage.getItem('courses'))[course.id] || "" : ""
-    );
-    // const storageCourse = JSON.parse(localStorage.getItem('courses'))[course.id];
+    // const [storageCourse,setStorageCourse] = useState(() =>
+    //     typeof window !== "undefined" ? JSON.parse(localStorage.getItem('courses'))[course.id] || "" : ""
+    // );
+    const storageCourse = JSON.parse(localStorage.getItem('courses'))[course.id];
     const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
     const handleProgress = async (state) => {

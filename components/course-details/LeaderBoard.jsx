@@ -17,10 +17,10 @@ import Leader from "./Leader"
 import { useState } from "react"
 
 export default function LeaderBoard({children,course}) {
-    // const storageCourse = JSON.parse(localStorage.getItem('courses'))[course.id];
-    const [storageCourse,setStorageCourse] = useState(() =>
-            typeof window !== "undefined" ? JSON.parse(localStorage.getItem('courses'))[course.id] || "" : ""
-        );
+    const storageCourse = JSON.parse(localStorage.getItem('courses'))[course.id];
+    // const [storageCourse,setStorageCourse] = useState(() =>
+    //         typeof window !== "undefined" ? JSON.parse(localStorage.getItem('courses'))[course.id] || "" : ""
+    //     );
     return (
         <Dialog>
             <DialogTrigger asChild>

@@ -4,10 +4,10 @@ import LessonsCard from './LessonsCard'
 import Lesson from './Lesson'
 
 export default function Lessons({lessons,course}) {
-    // const storageCourse = JSON.parse(localStorage.getItem('courses'))[course.id];
-    const [storageCourse,setStorageCourse] = useState(() =>
-            typeof window !== "undefined" ? JSON.parse(localStorage.getItem('courses'))[course.id] || "" : ""
-        );
+    const storageCourse = JSON.parse(localStorage.getItem('courses'))[course.id];
+    // const [storageCourse,setStorageCourse] = useState(() =>
+    //         typeof window !== "undefined" ? JSON.parse(localStorage.getItem('courses'))[course.id] || "" : ""
+    //     );
 
     return (
         <div className='mt-[70px]'>

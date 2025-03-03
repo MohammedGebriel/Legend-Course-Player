@@ -2,10 +2,10 @@ import { useDataContext } from '@/hooks/DataContext';
 import React, { useEffect, useState } from 'react';
 
 export default function CourseProgress({course}) {
-    // const storageCourse = JSON.parse(localStorage.getItem('courses'))[course.id];
-    const [storageCourse,setStorageCourse] = useState(() =>
-            typeof window !== "undefined" ? JSON.parse(localStorage.getItem('courses'))[course.id] || "" : ""
-        );
+    const storageCourse = JSON.parse(localStorage.getItem('courses'))[course.id];
+    // const [storageCourse,setStorageCourse] = useState(() =>
+    //         typeof window !== "undefined" ? JSON.parse(localStorage.getItem('courses'))[course.id] || "" : ""
+    //     );
     const { updateCourseProperty  } = useDataContext()
 
     useEffect(()=> {
